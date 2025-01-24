@@ -232,6 +232,11 @@ function App() {
     return (
       <div className="devices-container">
         <h2>Your Devices</h2>
+        {savedDevices.length > 3 && (
+          <div className="warning-message">
+            Warning: You have more than 3 devices registered. Consider removing unused devices for better security.
+          </div>
+        )}
         <div className="devices-grid">
           {savedDevices.map((device, index) => (
             <div key={device.visitorId} className="device-card">
